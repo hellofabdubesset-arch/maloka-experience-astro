@@ -1,0 +1,916 @@
+---
+import "../styles/global.css";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+
+const highlights = [
+  {
+    name: "Cartagena",
+    label: "Caraïbes coloniales",
+    image: "/images/cartagena.png",
+    alt: "Cartagena Colombie, architecture coloniale colorée"
+  },
+  {
+    name: "Vallée de Cocora",
+    label: "Andes et palmiers de cire",
+    image: "/images/cocora.png",
+    alt: "Vallée de Cocora Colombie, palmiers de cire et montagnes"
+  },
+  {
+    name: "Tayrona",
+    label: "Mer, jungle et rochers",
+    image: "/images/tayrona.png",
+    alt: "Parc Tayrona Colombie, plage tropicale et mer turquoise"
+  },
+  {
+    name: "Guatapé",
+    label: "Couleurs et lacs",
+    image: "/images/guatape.png",
+    alt: "Guatapé Colombie, village coloré et lac andin"
+  }
+];
+
+const blogHighlights = [
+  {
+    image: "/images/band-fabrice-guatape.png",
+    alt: "Guatapé Colombie, vue sur les lacs depuis la Piedra del Peñol"
+  },
+  {
+    image: "/images/band-fabrice-carthagene.png",
+    alt: "Carthagène Colombie, porte coloniale et façade rouge"
+  },
+  {
+    image: "/images/band-fabrice-medellin.png",
+    alt: "Medellín Colombie, fresque colorée de la Comuna 13"
+  },
+  {
+    image: "/images/band-fabrice-amazonie-pirogue.png",
+    alt: "Amazonie colombienne, pirogue sur le fleuve"
+  },
+  {
+    image: "/images/band-fabrice-montagne.png",
+    alt: "Montagne colombienne, bassin naturel et paysage andin"
+  }
+];
+
+const colombiaVisuals = [
+  {
+    image: "/images/mompox-fleuve-colombie.jpg",
+    alt: "Mompox Colombie, bâtiment colonial et fleuve Magdalena"
+  },
+  {
+    image: "/images/guajira-ocean-colombie.jpg",
+    alt: "Désert de la Guajira Colombie, plage sauvage et océan"
+  },
+  {
+    image: "/images/blog-san-agustin.jpg",
+    alt: "San Agustín Colombie, site archéologique et statue précolombienne"
+  }
+];
+
+const deepColombiaBand = [
+  {
+    name: "Tatacoa",
+    label: "Désert rouge et cactus",
+    image: "/images/band-tatacoa.jpg",
+    alt: "Désert de la Tatacoa Colombie, formations rouges et cactus"
+  },
+  {
+    name: "Villa de Leyva",
+    label: "Village colonial andin",
+    image: "/images/band-villa-de-leyva.jpg",
+    alt: "Villa de Leyva Colombie, rue pavée et maisons blanches"
+  },
+  {
+    name: "Jardín",
+    label: "Colombie intérieure",
+    image: "/images/blog-jardin.jpg",
+    alt: "Jardín Colombie, village andin et montagnes"
+  },
+  {
+    name: "La Candelaria",
+    label: "Bogotá historique",
+    image: "/images/band-candelaria.jpg",
+    alt: "La Candelaria Bogotá, place coloniale et maisons anciennes"
+  },
+  {
+    name: "La Guajira",
+    label: "Désert et océan",
+    image: "/images/band-guajira.jpg",
+    alt: "Désert de la Guajira Colombie, dunes de sable et océan"
+  }
+];
+
+const colombiaReasons = [
+  {
+    title: "Une diversité hallucinante",
+    text: "de la jungle amazonienne aux plages caribéennes, des sommets andins aux villages coloniaux, ici, les paysages changent au fil des kilomètres et offrent un spectacle permanent. Désert, glaciers, plages et îles de rêve, jungle : vous avez de tout en Colombie !"
+  },
+  {
+    title: "Un climat agréable toute l’année",
+    text: "que vous soyez adepte de chaleur tropicale ou d’air plus frais en altitude, il y a toujours une région où vous vous sentirez bien."
+  },
+  {
+    title: "Une culture riche et vibrante",
+    text: "entre les rythmes endiablés de la salsa, les fêtes populaires, l’héritage indigène et la modernité des grandes villes, impossible de s’ennuyer."
+  },
+  {
+    title: "Un coût de la vie abordable",
+    text: "voyager en Colombie, c’est profiter de prestations de qualité, hébergements, restaurants et activités, pour un budget bien plus accessible que dans beaucoup d’autres destinations."
+  },
+  {
+    title: "Une hospitalité incomparable",
+    text: "les Colombiens sont réputés pour leur accueil chaleureux et leur bienveillance. Ici, on prend le temps de vous parler, de vous aider, de vous faire sentir comme chez vous."
+  }
+];
+
+const roadbookItems = [
+  "un itinéraire détaillé jour par jour ;",
+  "les étapes recommandées et le temps idéal à passer dans chaque lieu ;",
+  "une sélection d’hébergements adaptés à votre budget et à votre style ;",
+  "des conseils sur les meilleurs quartiers où loger ;",
+  "des recommandations d’activités, visites et expériences locales ;",
+  "des conseils pratiques sur les transports : vols internes, bus, taxis, Uber, chauffeurs privés ;",
+  "des informations concrètes sur la sécurité ;",
+  "des conseils budget, change, retraits et paiements ;",
+  "des recommandations de restaurants, cafés, rooftops ou lieux sympas selon les villes ;",
+  "mes bons plans et contacts utiles lorsque c’est pertinent."
+];
+
+const trustItems = [
+  "Je connais la Colombie depuis 2011.",
+  "J’ai écrit des centaines de contenus voyage sur Instinct Voyageur.",
+  "J’ai aidé des milliers de lecteurs à préparer leurs voyages.",
+  "Je connais les erreurs classiques des voyageurs francophones en Colombie.",
+  "Je ne suis pas une agence de voyage : je ne vous vends pas un package standardisé."
+];
+
+const formulaItems = [
+  "un itinéraire personnalisé ;",
+  "un carnet de route détaillé ;",
+  "une sélection d’hébergements ;",
+  "des recommandations d’activités et d’expériences ;",
+  "des conseils transports, sécurité, budget et logistique ;",
+  "jusqu’à deux ajustements après réception de la première version ;",
+  "le guide audio bonus pour bien préparer votre voyage ;",
+  "le tout sur un espace personnalisé en ligne."
+];
+
+const audioItems = [
+  "des grandes choses à savoir avant de partir ;",
+  "de la sécurité ;",
+  "des transports ;",
+  "du budget ;",
+  "de la nourriture ;",
+  "des erreurs classiques à éviter ;",
+  "des bons réflexes à adopter sur place."
+];
+
+const goodFit = [
+  "vous voulez voyager en Colombie sans passer des dizaines d’heures à organiser votre itinéraire ;",
+  "vous cherchez un voyage personnalisé, pas un circuit standard ;",
+  "vous voulez éviter les erreurs classiques ;",
+  "vous avez des questions sur la sécurité, les transports ou le budget ;",
+  "vous aimez voyager en autonomie, mais avec une vraie préparation en amont ;",
+  "vous voulez gagner du temps tout en profitant des conseils d’un connaisseur du pays."
+];
+
+const badFit = [
+  "vous cherchez uniquement le prix le plus bas possible ;",
+  "vous aimez improviser totalement au jour le jour ;",
+  "vous voulez une agence qui réserve tout à votre place de A à Z ;",
+  "vous cherchez un voyage de groupe organisé ;",
+  "vous préférez passer des heures à tout comparer vous-même."
+];
+
+const processSteps = [
+  {
+    title: "Vous remplissez le petit formulaire de contact",
+    text: "Juste quelques informations de base pour commencer."
+  },
+  {
+    title: "Je vous réponds sous 48h",
+    text: "J’analyse votre demande et je vous envoie une proposition personnalisée."
+  },
+  {
+    title: "Vous validez la proposition",
+    text: "Une fois la proposition validée et le paiement effectué, vous recevez un questionnaire détaillé afin que je puisse affiner votre voyage."
+  },
+  {
+    title: "Je prépare votre carnet de route",
+    text: "Je construis votre itinéraire, vos étapes, vos recommandations et vos conseils pratiques."
+  },
+  {
+    title: "Vous recevez votre carnet personnalisé",
+    text: "Vous recevez une première version de votre carnet de route. Vous pouvez ensuite me demander jusqu’à deux ajustements pour affiner le programme avant votre départ."
+  }
+];
+
+const salesFaqs = [
+  {
+    question: "Quelle est la différence avec une agence de voyage ?",
+    answer: "Une agence vend généralement un voyage organisé, avec des prestations réservées via ses partenaires. Moi, je vous aide à construire votre itinéraire sur-mesure. Je vous recommande les étapes, les hébergements, les transports, les activités et les bons plans, mais vous gardez la liberté de réserver vous-même. Vous restez autonome, mais vous partez avec une vraie stratégie de voyage."
+  },
+  {
+    question: "Est-ce que vous réservez les hôtels et les transports à ma place ?",
+    answer: "Non. Je vous recommande les meilleures options selon votre budget et votre style, avec les liens utiles pour réserver. Vous gardez ainsi la main sur vos choix, vos paiements et vos conditions d’annulation."
+  },
+  {
+    question: "Combien de temps à l’avance faut-il vous contacter ?",
+    answer: "Idéalement, 1 à 2 mois avant le départ. Cela permet d’optimiser l’itinéraire, les hébergements et les transports internes. Si votre départ est proche, je peux parfois travailler en express, selon mes disponibilités."
+  },
+  {
+    question: "Quel budget prévoir pour voyager en Colombie ?",
+    answer: "Cela dépend beaucoup de votre style de voyage. En général : petit budget, environ 30 à 50 € par jour ; confort, environ 60 à 100 € par jour ; premium, à partir de 120 € par jour. Ces montants sont indicatifs. Mon rôle est justement de vous aider à construire un itinéraire cohérent avec votre budget."
+  },
+  {
+    question: "La Colombie est-elle sûre ?",
+    answer: "La Colombie se visite aujourd’hui beaucoup plus facilement qu’avant, mais ce n’est pas un pays où l’on voyage n’importe comment. Il faut connaître les bons quartiers, les bons moyens de transport, les zones à éviter et les réflexes de base. Je vous donne des conseils concrets pour voyager sereinement, sans tomber dans la paranoïa ni dans la naïveté."
+  },
+  {
+    question: "Puis-je modifier mon itinéraire après réception ?",
+    answer: "Oui. Une première version vous est envoyée, et vous pouvez demander jusqu’à deux ajustements gratuits avant votre départ."
+  },
+  {
+    question: "Sous quelle forme est livré le carnet de route ?",
+    answer: "Le carnet de route est livré sous forme numérique, au format PDF. Il est aussi disponible dans un espace personnalisé en ligne, où vous retrouvez tous les documents, les recommandations et les liens utiles. Cet espace reste accessible à tout moment."
+  },
+  {
+    question: "Est-ce adapté à un voyage en couple, en famille ou entre amis ?",
+    answer: "Oui. Le tarif de base concerne 1 à 2 voyageurs. Pour une famille ou un groupe, je vous fais une proposition adaptée selon le nombre de personnes et la complexité du voyage."
+  },
+  {
+    question: "Le guide audio est-il inclus ?",
+    answer: "Oui, le guide audio pratique sur la Colombie est inclus en bonus avec le carnet de route. Vous pourrez l’écouter avant votre départ pour mieux comprendre le pays et éviter les erreurs classiques."
+  }
+];
+
+const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Maloka Experience | Travel planner Colombie</title>
+    <meta
+      name="description"
+      content="Partez en Colombie avec un itinéraire personnalisé et l'esprit tranquille. Un itinéraire détaillé par un travel planner expert de la Colombie !"
+    />
+    <GoogleAnalytics />
+  </head>
+  <body>
+    <div class="site-shell">
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="brand" href="#top" aria-label="Maloka Experience">
+          <span class="brand-symbol" aria-hidden="true">
+            <img src="/images/maloka-logo-symbol.png" alt="" />
+          </span>
+          <span class="brand-text">Maloka Experience</span>
+        </a>
+        <div class="nav-links">
+          <a href="#pourquoi-colombie">Colombie</a>
+          <a href="#travel-planner">Travel planner</a>
+          <a href="#qui-je-suis">Qui suis-je ?</a>
+          <a href="#offres">Mes formules</a>
+          <a href="#projet-voyage">Contact</a>
+        </div>
+      </nav>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-inner">
+            <div class="hero-logo-lockup">
+              <h1>Partez en <span class="hero-accent">Colombie</span> avec un itinéraire personnalisé et l'esprit tranquille.</h1>
+            </div>
+            <p class="hero-copy">
+              Un itinéraire détaillé par un travel planner expert de la Colombie !<br />
+              Un accompagnement sur-mesure pour un voyage mémorable en Colombie !
+            </p>
+            <div class="hero-actions">
+              <a class="button cta-red" href="#projet-voyage">Décrire mon projet</a>
+              <a class="button secondary" href="#travel-planner">Voir le service</a>
+            </div>
+            <div class="hero-proof" aria-label="Points forts du service">
+              <div>
+                <strong>Sur mesure</strong>
+                <span>Itinéraire adapté à votre temps, votre budget, votre style.</span>
+              </div>
+              <div>
+                <strong>Colombie</strong>
+                <span>Un des pays les plus riches et diversifiés, une destination exigeante.</span>
+              </div>
+              <div>
+                <strong>Un ange gardien sur place</strong>
+                <span>Un accompagnement, un support sur place pour vous aider.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="photo-band hero-photo-band" aria-label="Lieux emblématiques de Colombie">
+          <div class="photo-band-track">
+            {highlights.map((place) => (
+              <figure class="place-card">
+                <img src={place.image} alt={place.alt} loading="lazy" />
+                <figcaption>
+                  <strong>{place.name}</strong>
+                  <span>{place.label}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section class="section sales-intro">
+          <div class="container intro-panel">
+            <div>
+              <p class="eyebrow">Travel planning Colombie</p>
+              <h2>Vous rêvez de partir en Colombie, mais vous ne savez pas par où commencer ?</h2>
+            </div>
+            <div class="intro-copy">
+              <p>
+                Bogotá, Medellín, Carthagène, la région du café, le parc Tayrona et la Cité
+                perdue, la vallée de Cocora, l’Amazonie, la Guajira… <strong>La Colombie fait rêver, oui.
+                Mais elle peut aussi vite donner le tournis.</strong>
+              </p>
+              <p>
+                Trop d’options. Trop d’avis contradictoires. Trop de questions sur les transports,
+                la sécurité, les distances, les quartiers où dormir, les étapes à privilégier.
+              </p>
+              <p>
+                <strong>Je vous aide à construire un voyage fluide, sûr et vraiment adapté à vos envies,
+                grâce à mon expérience de la Colombie depuis 2011.</strong>
+              </p>
+              <p>
+                <strong>Décrivez-moi votre projet de voyage et je vous réponds sous 24/48h avec une
+                proposition personnalisée.</strong>
+              </p>
+              <a class="button cta-red" href="#projet-voyage">Décrire mon projet de voyage</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="pourquoi-colombie">
+          <div class="container">
+            <div class="section-header why-header">
+              <div>
+                <h2>Pourquoi voyager en Colombie ?</h2>
+                <h3 class="section-subtitle">Un pays qui concentre tout ce qui rend un voyage marquant.</h3>
+                <p>
+                  Peut-être avez-vous vu passer des images de Carthagène et de ses ruelles colorées,
+                  des plages de rêve du parc Tayrona, ou des immenses étendues verdoyantes de la
+                  vallée de Cocora.
+                </p>
+                <p>
+                  Peut-être avez-vous déjà entendu parler de la chaleur des Colombiens, de leur joie
+                  de vivre contagieuse et de cette atmosphère unique qu’on ne retrouve nulle part
+                  ailleurs en Amérique du Sud.
+                </p>
+                <p><strong>Spoiler : en vrai, c’est encore mieux !</strong></p>
+                <p><strong>Parole d’un connaisseur du pays depuis 2011 !</strong></p>
+              </div>
+              <figure class="why-photo">
+                <img
+                  src="/images/colombie-plongee-epave.jpg"
+                  alt="Plongée en Colombie, épave sous-marine et eau turquoise"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+
+            <div class="content-grid">
+              <div>
+                <h3>La Colombie, c’est un condensé de tout ce que l’on peut attendre d’un voyage marquant :</h3>
+                <ul class="check-list">
+                  {colombiaReasons.map((reason) => (
+                    <li>
+                      <span class="check">✓</span>
+                      <span><strong>{reason.title}</strong> : {reason.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <aside class="mini-photo-stack" aria-label="Aperçu des paysages colombiens">
+                {colombiaVisuals.map((place) => (
+                  <img src={place.image} alt={place.alt} loading="lazy" />
+                ))}
+              </aside>
+            </div>
+
+            <div class="pull-text">
+              <p>
+                Peu de pays offrent une telle diversité sur un seul territoire. En quelques jours,
+                vous pouvez passer d’une grande ville moderne à une finca de café, d’une plage
+                tropicale à un village suspendu dans le temps, d’une randonnée en montagne à une
+                soirée salsa.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container split reality-block">
+            <div>
+              <h2>Mais soyons honnêtes…</h2>
+              <p>
+                <strong>La Colombie a longtemps souffert d’une mauvaise réputation. Si aujourd’hui, elle
+                attire de plus en plus de voyageurs, plus de 6,5 millions de visiteurs en 2025,
+                certains hésitent encore, freinés par des clichés et des idées reçues.</strong>
+              </p>
+              <p>
+                <strong>La réalité ?</strong> Oui, le pays a énormément changé. Mais les distances sont grandes, les
+                régions très différentes, certains quartiers sont à éviter, et un mauvais choix
+                d’itinéraire peut vite vous faire perdre du temps, de l’énergie et parfois de
+                l’argent.
+              </p>
+              <p><strong>Et c’est là que j’interviens !</strong></p>
+              <p>
+                Après plus de 15 ans à parcourir la Colombie en long, en large et en travers, je
+                vous aide à construire le voyage parfait, adapté à vos envies, votre budget et
+                votre rythme.
+              </p>
+              <p>
+                <strong>Parce qu’un voyage en Colombie, ce n’est pas juste une destination. C’est souvent
+                un pays qui vous reste dans la peau. Et une fois que vous y aurez goûté, vous
+                comprendrez pourquoi tant de voyageurs tombent amoureux de ce pays et y reviennent
+                encore et encore.</strong>
+              </p>
+              <blockquote>
+                Comme le disait un ancien slogan du ministère du Tourisme colombien : “Le plus
+                grand risque, c’est de vouloir y rester !”
+              </blockquote>
+            </div>
+            <figure class="culture-montage">
+              <div class="culture-photo culture-photo-main">
+                <img
+                  src="/images/peintures-rupestres-cerro-azul.png"
+                  alt="Peintures rupestres de Cerro Azul en Colombie"
+                  loading="lazy"
+                />
+              </div>
+              <div class="culture-photo culture-photo-secondary">
+                <img
+                  src="/images/musee-or-bogota.png"
+                  alt="Pièces d’or précolombiennes au Musée de l’Or de Bogotá"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                Le fabuleux Musée de l’Or de Bogotá et les incroyables peintures rupestres de
+                Cerro Azul.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section personal-band" aria-label="Photos de Colombie">
+          <div class="photo-band-track blog-track">
+            {blogHighlights.map((place) => (
+              <figure class="place-card blog-card photo-only-card">
+                <img src={place.image} alt={place.alt} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section class="section alt" id="travel-planner">
+          <div class="container split">
+            <div>
+              <p class="eyebrow">Pourquoi faire appel à un Travel Planner ?</p>
+              <h2>Vous gardez la liberté d’un voyage indépendant, avec une feuille de route claire.</h2>
+              <p>
+                <strong>Organiser un voyage en Colombie peut vite devenir compliqué : distances importantes,
+                choix des étapes, sécurité, transports, quartiers où dormir, rythme du voyage…
+                </strong>
+              </p>
+              <p>
+                <strong>Mon rôle est de vous faire gagner du temps et d’éviter les erreurs classiques :
+                itinéraire trop chargé, mauvais choix de région selon la saison, transports mal
+                optimisés, étapes sans grand intérêt ou quartiers mal choisis.</strong>
+              </p>
+              <p>
+                <strong>Avec plus de 15 ans d’expérience en Colombie, je vous propose un accompagnement
+                sur-mesure pour que votre voyage soit une réussite, sans stress ni perte de temps.
+                </strong>
+              </p>
+            </div>
+            <figure class="planner-photo">
+              <img
+                src="/images/fabrice-voyage-liberte-colombie.png"
+                alt="Voyageur face aux montagnes en Colombie"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container split roadbook-section">
+            <div>
+              <p class="eyebrow">Ce que vous obtenez concrètement</p>
+              <h2>Un carnet de route personnalisé, pensé pour votre voyage à vous.</h2>
+              <p>
+                <strong>En choisissant mon service de Travel Planner Colombie, vous recevez un carnet de
+                route personnalisé, conçu selon vos envies, votre budget, votre durée de séjour et
+                votre façon de voyager :</strong>
+              </p>
+              <ul class="check-list compact">
+                {roadbookItems.map((item) => (
+                  <li><span class="check">✓</span><span>{item}</span></li>
+                ))}
+              </ul>
+              <p>
+                L’objectif est de vous remettre un carnet de route clair, pratique et utilisable,
+                pensé pour votre voyage à vous.
+              </p>
+            </div>
+            <div class="roadbook-mockup" aria-label="Mockup fictif du carnet de route de trois pages">
+              <article class="roadbook-page roadbook-cover">
+                <div class="roadbook-cover-photo"></div>
+                <div class="roadbook-cover-content">
+                  <span>Carnet de route</span>
+                  <strong>Colombie sur mesure</strong>
+                  <p>Un itinéraire clair, réaliste et pensé autour de votre rythme.</p>
+                  <div class="cover-tags">
+                    <small>14 jours</small>
+                    <small>Andes</small>
+                    <small>Caraïbes</small>
+                  </div>
+                </div>
+              </article>
+              <article class="roadbook-page roadbook-detail day-two">
+                <div class="roadbook-topline">
+                  <span>Jour 01</span>
+                  <small>Bogotá</small>
+                </div>
+                <div class="page-photo bogota-photo"></div>
+                <strong>Arrivée en douceur</strong>
+                <p>Installation à Chapinero, balade courte et dîner proche de l’hôtel.</p>
+                <div class="timeline-preview" aria-hidden="true">
+                  <div><span>15h00</span><b>Check-in</b></div>
+                  <div><span>17h30</span><b>Premiers repères</b></div>
+                  <div><span>20h00</span><b>Dîner tranquille</b></div>
+                </div>
+                <dl>
+                  <div><dt>Quartier</dt><dd>Chapinero Alto</dd></div>
+                  <div><dt>Transport</dt><dd>Taxi officiel</dd></div>
+                </dl>
+              </article>
+              <article class="roadbook-page roadbook-detail day-three">
+                <div class="roadbook-topline">
+                  <span>Jour 02</span>
+                  <small>Culture</small>
+                </div>
+                <div class="page-photo coffee-photo"></div>
+                <strong>Cap vers le café</strong>
+                <p>Vol intérieur, transfert optimisé et première soirée dans une finca paisible.</p>
+                <div class="route-card" aria-hidden="true">
+                  <span>Bogotá</span>
+                  <b></b>
+                  <span>Pereira</span>
+                  <b></b>
+                  <span>Salento</span>
+                </div>
+                <dl>
+                  <div><dt>Durée</dt><dd>4h30 environ</dd></div>
+                  <div><dt>Priorité</dt><dd>Réserver tôt</dd></div>
+                </dl>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="qui-je-suis">
+          <div class="container about">
+            <div class="about-photo" aria-label="Photo de Fabrice Dubesset">
+              <img
+                src="/images/fabrice-portrait-colombie.png"
+                alt="Fabrice Dubesset, Travel Planner Colombie, devant une façade colorée"
+                onerror="this.style.display='none'; this.parentElement.classList.add('missing-photo');"
+              />
+            </div>
+            <div class="about-copy">
+              <h2>Qui suis-je ?</h2>
+              <h3>Moi, c’est Fabrice Dubesset.</h3>
+              <p>
+                <strong>Je suis le créateur du blog <a href="https://www.instinct-voyageur.fr/" target="_blank" rel="noreferrer">Instinct Voyageur</a>, un site dédié au
+                voyage et à l’expatriation depuis 2010. Je fus un des tout premiers blogueurs
+                voyage pro francophones, créant mon métier autour de ma passion du voyage, avec
+                plus de 25 millions de visites depuis sur mon blog de voyage.</strong>
+              </p>
+              <p>
+                Je suis aussi consultant en visibilité digitale et marketing de contenu spécialisé
+                dans le tourisme.
+              </p>
+              <p>
+                <strong>J’ai découvert la Colombie pour la première fois en 2011. Depuis, je n’ai jamais
+                vraiment décroché.</strong>
+              </p>
+              <p>
+                J’ai parcouru le pays du désert de la Guajira jusqu’au sanctuaire de Las Lajas, des
+                îles de San Andrés au site archéologique de San Agustín, de Bogotá à Medellín, de
+                la région du café aux Caraïbes, des villages coloniaux aux coins plus confidentiels.
+              </p>
+              <p>
+                J’y ai voyagé, vécu, travaillé, exploré. J’ai fait des treks, des road trips, de la
+                plongée, du parapente, des balades à cheval, des voyages solo, des séjours plus
+                confort, des expériences plus roots. J’ai aussi vu le pays changer, s’ouvrir,
+                évoluer.
+              </p>
+              <div class="social-links" aria-label="Réseaux sociaux de Fabrice Dubesset">
+                <a href={instagramUrl} target="_blank" rel="noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1.2"></circle>
+                  </svg>
+                  @instinct_voyageur
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container trust-panel">
+            <div>
+              <h3>Pourquoi me faire confiance ?</h3>
+              <ul class="check-list compact">
+                {trustItems.map((item) => (
+                  <li><span class="check">✓</span><span>{item}</span></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p>
+                Mon approche est simple : vous aider à créer un voyage qui vous ressemble.
+              </p>
+              <p>
+                Pas un circuit copié-collé. Pas une course absurde pour cocher toutes les cases. Pas
+                un itinéraire Instagram impossible à tenir.
+              </p>
+              <p><strong>Un vrai voyage. Fluide, équilibré, vivant.</strong></p>
+            </div>
+          </div>
+
+          <div class="container personal-placeholder">
+            <figure class="personal-photo-card">
+              <img
+                src="/images/fabrice-amazonie.png"
+                alt="Fabrice Dubesset, Travel Planner Colombie, en Amazonie sur une pirogue"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="personal-photo-card">
+              <img
+                src="/images/fabrice-parc.png"
+                alt="Fabrice Dubesset, Travel Planner Colombie, dans un parc naturel en montagne"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="personal-photo-card">
+              <img
+                src="/images/fabrice-plage.png"
+                alt="Fabrice Dubesset, Travel Planner Colombie, sur une plage du parc Tayrona"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="section dark-section" id="offres">
+          <div class="container">
+            <div class="section-header">
+              <h3>Mes formules</h3>
+            </div>
+            <div class="offer-grid">
+              <article class="price-card main-offer">
+                <h3 class="offer-title">Carnet de route Colombie</h3>
+                <p class="offer-price">À partir de 347 €</p>
+                <p>Pour 1 à 2 voyageurs, sur une base de 10 à 14 jours.</p>
+                <ul class="feature-list">
+                  {formulaItems.map((item) => (
+                    <li><span class="check">✓</span><span>{item}</span></li>
+                  ))}
+                </ul>
+                <p class="small-note">
+                  Le tarif final dépend de la durée du séjour, du nombre d’étapes et du nombre de
+                  voyageurs.
+                </p>
+                <figure class="offer-photo">
+                  <img
+                    src="/images/barichara-route-base.jpg"
+                    alt="Barichara Colombie, rue coloniale et maisons blanches"
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <article class="price-card guardian-offer">
+                <h3 class="offer-title">Option Ange Gardien Colombie</h3>
+                <p class="offer-price">Offre de lancement : +197 € pour 14 jours</p>
+                <p class="small-note">Tarif habituel : +297 €.</p>
+                <p>
+                  <strong>Vous souhaitez partir encore plus serein ?</strong> <strong>Avec cette option, vous
+                  bénéficiez d’un support WhatsApp pendant votre voyage avec Laura</strong>,
+                  Colombienne francophone vivant sur place, qui peut vous aider en cas de question
+                  pratique, d’imprévu ou de petit blocage sur place.
+                </p>
+                <p>
+                  Besoin de confirmer une info avec un hôtel ? De comprendre un chauffeur ? De
+                  demander une recommandation locale ? D’avoir un avis rapide sur un quartier, un
+                  transport ou une situation ? Laura peut vous orienter et vous aider à communiquer
+                  en espagnol si nécessaire.
+                </p>
+                <p>
+                  Ce service n’est pas une conciergerie 24h/24 ni une assistance médicale ou
+                  juridique, mais un vrai filet de sécurité local pour voyager plus sereinement.
+                </p>
+                <div class="guardian-visual" aria-label="Support WhatsApp sur place avec Laura">
+                  <div class="laura-photo-slot">
+                    <img
+                      src="/images/laura-ange-gardien.png"
+                      alt="Laura, support francophone sur place en Colombie"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="phone-mockup" aria-label="Exemple d’échange WhatsApp avec Laura">
+                    <div class="phone-top">
+                      <span>Laura</span>
+                      <small>En ligne</small>
+                    </div>
+                    <div class="chat-bubbles">
+                      <p class="bubble incoming">Hola, je peux appeler l’hôtel pour confirmer.</p>
+                      <p class="bubble outgoing">Merci ! On ne comprend pas l’adresse du chauffeur.</p>
+                      <p class="bubble incoming">Je vous aide, envoyez-moi la capture.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="container split">
+            <div>
+              <h2>Bonus : mon guide audio !</h2>
+              <h3 class="section-subtitle">Un format podcast pour arriver plus serein en Colombie.</h3>
+              <p>
+                <strong>Pour vous aider à partir l’esprit plus léger, vous recevez également un guide audio
+                pratique sur la Colombie.</strong>
+              </p>
+              <p>
+                Un format podcast, simple à écouter avant le départ, dans l’avion, en marchant ou
+                en préparant vos affaires.
+              </p>
+              <p><strong>Dans ce guide audio, je vous parle notamment :</strong></p>
+              <ul class="check-list compact">
+                {audioItems.map((item) => (
+                  <li><span class="check">✓</span><span>{item}</span></li>
+                ))}
+              </ul>
+            </div>
+            <div class="audio-visual" aria-label="Illustration d'un guide audio à écouter">
+              <img
+                src="/images/audio-guide-podcast.png"
+                alt="Micro de podcast, casque et téléphone pour écouter le guide audio Colombie"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="fit-grid">
+              <article>
+                <h2>Ce service est fait pour vous si…</h2>
+                <ul class="check-list compact">
+                  {goodFit.map((item) => (
+                    <li><span class="check">✓</span><span>{item}</span></li>
+                  ))}
+                </ul>
+              </article>
+              <article>
+                <h2>Ce service n’est probablement pas fait pour vous si :</h2>
+                <ul class="check-list compact muted-list">
+                  {badFit.map((item) => (
+                    <li><span class="check">×</span><span>{item}</span></li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+            <div class="fit-photo-duo" aria-label="Photos de Colombie">
+              <figure>
+                <img
+                  src="/images/fit-cocora.png"
+                  alt="Vallée de Cocora Colombie, jeep et palmiers de cire"
+                  loading="lazy"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="/images/fit-carthagene.png"
+                  alt="Carthagène Colombie, remparts et skyline moderne"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="projet-voyage">
+          <div class="container">
+            <div class="section-header">
+              <p class="eyebrow">Comment ça marche ?</p>
+              <h2>Simple, clair, efficace.</h2>
+              <p>
+                Vous gardez la liberté de réserver vous-même vos vols, hôtels et activités, tout en
+                bénéficiant d’une vraie feuille de route.
+              </p>
+            </div>
+            <div class="process-steps">
+              {processSteps.map((step, index) => (
+                <article>
+                  <span>{index + 1}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </article>
+              ))}
+            </div>
+            <h2 class="form-title">Parlez-moi de votre projet de voyage</h2>
+            <p class="form-subtitle">
+              Remplissez ce court formulaire avec les grandes lignes de votre séjour en Colombie.<br />
+              Je vous répondrai sous 48h.
+            </p>
+            <div class="tally-panel">
+              <iframe
+                src="https://tally.so/embed/1ApOgg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                data-tally-src="https://tally.so/embed/1ApOgg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="620"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Décrire mon projet de voyage"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="faq">
+          <div class="container">
+            <div class="section-header">
+              <h2>FAQ</h2>
+            </div>
+            <div class="faq">
+              {salesFaqs.map((faq) => (
+                <details>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+            <div class="final-cta">
+              <p>On embarque pour l’aventure.</p>
+              <a class="button cta-red large" href="#projet-voyage">Décrire mon projet de voyage</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <a class="footer-logo" href="#top" aria-label="Retour en haut de Maloka Experience">
+            <img src="/images/maloka-logo-full.png" alt="Logo Maloka Experience" loading="lazy" />
+          </a>
+          <div class="footer-center">
+            <span>© 2026 Maloka Experience</span>
+            <small>Travel planning sur mesure pour la Colombie</small>
+          </div>
+          <nav class="footer-links" aria-label="Liens de pied de page">
+            <a href="/mentions-legales/">Mentions légales</a>
+            <a href="/cgv/">CGV</a>
+            <a href="/politique-confidentialite/">Confidentialité</a>
+            <a class="footer-social" href={instagramUrl} target="_blank" rel="noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1.2"></circle>
+              </svg>
+              Instagram
+            </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+  </body>
+</html>
