@@ -2198,6 +2198,7 @@ blockquote {
 
 .article-content strong {
   color: var(--ink);
+  font-weight: 800;
 }
 
 .article-content h2,
