@@ -2228,6 +2228,22 @@ blockquote {
   margin-top: 8px;
 }
 
+.article-warning {
+  margin: 34px 0;
+  padding: 20px 22px;
+  border-left: 5px solid #f39c12;
+  border-radius: 8px;
+  background: #fffaf0;
+}
+
+.article-warning p {
+  margin-bottom: 14px;
+}
+
+.article-warning p:last-child {
+  margin-bottom: 0;
+}
+
 .article-cta {
   margin-top: 68px;
   padding: clamp(30px, 5vw, 46px);
