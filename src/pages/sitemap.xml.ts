@@ -7,6 +7,11 @@ const pages = [
     path: "/",
     priority: "1.0",
     changefreq: "weekly"
+  },
+  {
+    path: "/blog/",
+    priority: "0.7",
+    changefreq: "weekly"
   }
 ];
 
