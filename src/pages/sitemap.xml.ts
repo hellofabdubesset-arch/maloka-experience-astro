@@ -17,6 +17,11 @@ const pages = [
     path: "/combien-de-temps-visiter-colombie/",
     priority: "0.8",
     changefreq: "monthly"
+  },
+  {
+    path: "/premier-voyage-colombie-erreurs-a-eviter/",
+    priority: "0.8",
+    changefreq: "monthly"
   }
 ];
 
