@@ -12,6 +12,11 @@ const pages = [
     path: "/blog/",
     priority: "0.7",
     changefreq: "weekly"
+  },
+  {
+    path: "/combien-de-temps-visiter-colombie/",
+    priority: "0.8",
+    changefreq: "monthly"
   }
 ];
 
