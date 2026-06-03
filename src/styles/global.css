@@ -2201,6 +2201,13 @@ blockquote {
   font-weight: 800;
 }
 
+.article-content a {
+  color: var(--accent-red);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .article-content h2,
 .article-content h3 {
   color: var(--ink);
