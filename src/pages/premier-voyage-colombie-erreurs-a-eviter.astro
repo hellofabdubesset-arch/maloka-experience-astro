@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import AffiliateLinks from "../components/AffiliateLinks.astro";
+import AuthorBox from "../components/AuthorBox.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
@@ -22,6 +23,7 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
       name="description"
       content="Premier voyage en Colombie ? Découvrez les 14 erreurs les plus fréquentes à éviter pour préparer un voyage plus fluide, plus sûr et mieux adapté."
     />
+    <meta name="author" content="Fabrice Dubesset" />
     <GoogleAnalytics />
   </head>
   <body>
@@ -590,6 +592,8 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
               </p>
               <a class="button cta-red" href="/#projet-voyage">Décrire mon projet de voyage</a>
             </aside>
+
+            <AuthorBox />
           </div>
         </article>
       </main>
