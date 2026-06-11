@@ -19,6 +19,11 @@ const pages = [
     changefreq: "monthly"
   },
   {
+    path: "/securite-en-colombie/",
+    priority: "0.8",
+    changefreq: "monthly"
+  },
+  {
     path: "/combien-de-temps-visiter-colombie/",
     priority: "0.8",
     changefreq: "monthly"
