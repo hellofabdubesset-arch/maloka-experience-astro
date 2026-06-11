@@ -14,6 +14,11 @@ const pages = [
     changefreq: "weekly"
   },
   {
+    path: "/qui-suis-je/",
+    priority: "0.7",
+    changefreq: "monthly"
+  },
+  {
     path: "/comment-aller-en-colombie/",
     priority: "0.8",
     changefreq: "monthly"
