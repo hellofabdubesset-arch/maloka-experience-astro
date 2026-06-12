@@ -2179,6 +2179,13 @@ blockquote {
   box-shadow: 0 28px 82px rgba(25, 43, 34, 0.16);
 }
 
+.article-cover figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .article-content {
   max-width: 860px;
   padding-top: 64px;
