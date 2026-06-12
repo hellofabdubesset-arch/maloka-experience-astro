@@ -2292,9 +2292,9 @@ blockquote {
 .article-map {
   margin: 34px 0 38px;
   overflow: hidden;
-  border: 1px solid rgba(36, 70, 56, 0.16);
+  border: 2px solid rgba(36, 70, 56, 0.24);
   border-radius: 8px;
-  background: linear-gradient(135deg, #fffaf0, #e8efec);
+  background: linear-gradient(135deg, #fff7de, #e8efec);
   box-shadow: 0 18px 48px rgba(25, 43, 34, 0.12);
 }
 
@@ -2309,7 +2309,7 @@ blockquote {
 }
 
 .map-shape {
-  fill: #dfe8dd;
+  fill: #cfdcc9;
   stroke: #244638;
   stroke-linejoin: round;
   stroke-width: 5;
