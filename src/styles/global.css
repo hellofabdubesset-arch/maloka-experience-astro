@@ -2282,6 +2282,20 @@ blockquote {
   background: rgba(255, 250, 240, 0.92);
 }
 
+.about-portrait-photo {
+  max-width: 560px;
+  margin: 0 auto 42px;
+}
+
+.about-portrait-photo img {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .article-warning {
   margin: 34px 0;
   padding: 20px 22px;
