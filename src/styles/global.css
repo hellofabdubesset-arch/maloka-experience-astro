@@ -2189,6 +2189,19 @@ blockquote {
   line-height: 1.72;
 }
 
+.article-header .article-date {
+  margin-top: 16px;
+  color: rgba(36, 70, 56, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.article-date time {
+  color: var(--leaf-dark);
+}
+
 .article-cover {
   margin-top: 38px;
 }
