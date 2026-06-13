@@ -10,6 +10,8 @@ const articles = [
     description:
       "Quartiers, transports, sorties, zones à éviter : mes conseils terrain pour voyager sans paranoïa.",
     href: "/securite-en-colombie/",
+    image: "/images/articles/securite-colombie-rue-coloniale.jpg",
+    alt: "Rue coloniale colorée pour un article sur la sécurité en Colombie",
     status: "Publié"
   },
   {
@@ -17,6 +19,8 @@ const articles = [
     description:
       "Vols, aéroports, escales et conseils pour choisir une arrivée cohérente avec votre itinéraire.",
     href: "/comment-aller-en-colombie/",
+    image: "/images/articles/tayrona-parc-national-colombie.jpg",
+    alt: "Plage du parc Tayrona pour préparer comment aller en Colombie",
     status: "Publié"
   },
   {
@@ -24,6 +28,8 @@ const articles = [
     description:
       "10 jours, 15 jours, 3 semaines ou plus : comment choisir la bonne durée selon votre rythme et votre itinéraire.",
     href: "/combien-de-temps-visiter-colombie/",
+    image: "/images/cocora.jpg",
+    alt: "Vallée de Cocora pour savoir combien de temps visiter la Colombie",
     status: "Publié"
   },
   {
@@ -31,6 +37,8 @@ const articles = [
     description:
       "Les mauvais réflexes qui font perdre du temps, de l’énergie et parfois de l’argent lors d’un premier voyage en Colombie.",
     href: "/premier-voyage-colombie-erreurs-a-eviter/",
+    image: "/images/tayrona.jpg",
+    alt: "Plage colombienne pour préparer un premier voyage en Colombie",
     status: "Publié"
   }
 ];
@@ -86,12 +94,17 @@ const articles = [
           <div class="container blog-grid">
             {articles.map((article) => (
               <article class="blog-card">
-                <span>{article.status}</span>
-                <h2>{article.title}</h2>
-                <p>{article.description}</p>
-                <a href={article.href} aria-disabled={article.href === "#"}>
-                  Lire l’article
+                <a class="blog-card-image" href={article.href} aria-label={`Lire l’article : ${article.title}`}>
+                  <img src={article.image} alt={article.alt} />
                 </a>
+                <div class="blog-card-content">
+                  <span>{article.status}</span>
+                  <h2>{article.title}</h2>
+                  <p>{article.description}</p>
+                  <a href={article.href} aria-disabled={article.href === "#"}>
+                    Lire l’article
+                  </a>
+                </div>
               </article>
             ))}
           </div>
