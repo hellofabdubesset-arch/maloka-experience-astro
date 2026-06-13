@@ -120,46 +120,71 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
                 role="img"
                 aria-label="Carte simplifiée de la Colombie avec les principaux aéroports internationaux"
               >
-                <svg viewBox="0 0 620 720" aria-hidden="true">
-                  <path
-                    class="map-shape"
-                    d="M247 45 319 83 360 140 432 151 485 226 472 305 520 364 490 440 515 519 463 604 393 628 359 688 293 640 252 661 211 605 149 577 161 507 119 464 145 401 115 343 139 277 101 224 151 168 174 95Z"
-                  />
-                  <path class="map-route" d="M235 158 305 230 352 280 314 352 258 421 225 504" />
-                  <path class="map-route" d="M352 280 430 248 456 218" />
-                  <g class="map-pin" transform="translate(252 126)">
-                    <circle r="7"></circle>
-                    <text x="14" y="5">Barranquilla BAQ</text>
-                  </g>
-                  <g class="map-pin" transform="translate(206 158)">
-                    <circle r="7"></circle>
-                    <text x="-126" y="5">Carthagène CTG</text>
-                  </g>
-                  <g class="map-pin" transform="translate(289 142)">
-                    <circle r="7"></circle>
-                    <text x="14" y="-8">Santa Marta SMR</text>
-                  </g>
-                  <g class="map-pin" transform="translate(266 312)">
-                    <circle r="7"></circle>
-                    <text x="-108" y="5">Medellín MDE</text>
-                  </g>
-                  <g class="map-pin" transform="translate(352 364)">
-                    <circle r="9"></circle>
-                    <text x="14" y="5">Bogotá BOG</text>
-                  </g>
-                  <g class="map-pin" transform="translate(280 410)">
-                    <circle r="7"></circle>
-                    <text x="-148" y="5">Région café PEI / AXM</text>
-                  </g>
-                  <g class="map-pin" transform="translate(244 472)">
-                    <circle r="7"></circle>
-                    <text x="-76" y="5">Cali CLO</text>
-                  </g>
-                  <g class="map-pin" transform="translate(398 628)">
-                    <circle r="7"></circle>
-                    <text x="14" y="5">Leticia LET</text>
-                  </g>
-                </svg>
+                <div class="map-visual">
+                  <svg viewBox="0 0 520 640" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="colombiaLand" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#dce8d7"></stop>
+                        <stop offset="100%" stop-color="#98aa8b"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path
+                      class="map-coast"
+                      fill="url(#colombiaLand)"
+                      d="M202 34 279 62 314 110 380 126 432 184 421 250 462 315 431 376 452 456 410 526 348 552 313 608 256 568 211 590 179 535 120 502 132 438 96 392 122 334 93 281 119 220 94 176 141 124 158 68Z"
+                    />
+                    <path
+                      class="map-andes"
+                      d="M247 102C287 164 286 222 254 279C218 343 214 401 247 486"
+                    />
+                    <path
+                      class="map-flight"
+                      d="M82 96C176 88 282 108 388 174"
+                    />
+                    <g class="map-airport major" transform="translate(298 320)">
+                      <circle r="17"></circle>
+                      <text y="6">1</text>
+                    </g>
+                    <g class="map-airport" transform="translate(209 278)">
+                      <circle r="15"></circle>
+                      <text y="5">2</text>
+                    </g>
+                    <g class="map-airport" transform="translate(152 142)">
+                      <circle r="15"></circle>
+                      <text y="5">3</text>
+                    </g>
+                    <g class="map-airport" transform="translate(202 422)">
+                      <circle r="15"></circle>
+                      <text y="5">4</text>
+                    </g>
+                    <g class="map-airport" transform="translate(236 365)">
+                      <circle r="15"></circle>
+                      <text y="5">5</text>
+                    </g>
+                    <g class="map-airport" transform="translate(252 118)">
+                      <circle r="15"></circle>
+                      <text y="5">6</text>
+                    </g>
+                    <g class="map-airport" transform="translate(330 552)">
+                      <circle r="15"></circle>
+                      <text y="5">7</text>
+                    </g>
+                    <text class="map-region-label" x="334" y="322">Bogotá</text>
+                    <text class="map-region-label coast-label" x="132" y="98">Caraïbes</text>
+                    <text class="map-region-label south-label" x="344" y="588">Amazonie</text>
+                    <text class="map-water-label" x="58" y="244">Pacifique</text>
+                    <text class="map-water-label caribbean-water" x="316" y="78">Mer Caraïbe</text>
+                  </svg>
+                </div>
+                <ol class="map-legend">
+                  <li><span>1</span><strong>Bogotá</strong><small>BOG, hub principal</small></li>
+                  <li><span>2</span><strong>Medellín</strong><small>MDE, Antioquia et café</small></li>
+                  <li><span>3</span><strong>Carthagène</strong><small>CTG, côte Caraïbe</small></li>
+                  <li><span>4</span><strong>Cali</strong><small>CLO, sud-ouest</small></li>
+                  <li><span>5</span><strong>Région café</strong><small>PEI / AXM</small></li>
+                  <li><span>6</span><strong>Santa Marta</strong><small>SMR, Tayrona et Minca</small></li>
+                  <li><span>7</span><strong>Leticia</strong><small>LET, Amazonie</small></li>
+                </ol>
               </div>
               <figcaption>
                 Carte simplifiée des principales portes d’entrée en Colombie. Bogotá reste le hub
