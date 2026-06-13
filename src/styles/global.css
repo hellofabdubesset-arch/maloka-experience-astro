@@ -1646,6 +1646,30 @@ blockquote {
   line-height: 1.25;
 }
 
+.launch-price {
+  display: grid;
+  gap: 3px;
+}
+
+.launch-price .old-price,
+.launch-price .launch-deadline {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88em;
+  font-weight: 700;
+}
+
+.launch-price .old-price {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.launch-price .launch-deadline {
+  color: #ffd23f;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72em;
+}
+
 .price-card p,
 .price-card .feature-list li {
   color: rgba(255, 255, 255, 0.76);
