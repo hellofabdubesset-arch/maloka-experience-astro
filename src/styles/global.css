@@ -2519,6 +2519,38 @@ blockquote {
   object-fit: contain;
 }
 
+.article-illustration img,
+.official-advisory-map img {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #fff;
+}
+
+.article-illustration figcaption,
+.official-advisory-map figcaption {
+  background: #fffaf0;
+}
+
+.narrow-illustration {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.official-advisory-map {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.official-advisory-map figcaption a {
+  color: #244638;
+  font-weight: 800;
+}
+
 .article-warning {
   margin: 34px 0;
   padding: 20px 22px;
@@ -2533,6 +2565,28 @@ blockquote {
 
 .article-warning p:last-child {
   margin-bottom: 0;
+}
+
+.article-guardian-note {
+  margin: 38px 0;
+  padding: 26px;
+  border: 1px solid rgba(239, 61, 50, 0.22);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fffaf0 0%, #fff 56%, #f6efe2 100%);
+  box-shadow: 0 18px 42px rgba(36, 70, 56, 0.1);
+}
+
+.article-guardian-note h2 {
+  margin: 4px 0 14px;
+  color: #244638;
+}
+
+.article-guardian-note p {
+  margin-bottom: 14px;
+}
+
+.article-guardian-note .button {
+  margin-top: 6px;
 }
 
 .affiliate-box {
