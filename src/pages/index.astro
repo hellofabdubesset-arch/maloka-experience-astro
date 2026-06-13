@@ -245,6 +245,8 @@ const salesFaqs = [
 ];
 
 const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
+const whatsappShareUrl =
+  "https://wa.me/?text=Tu%20pr%C3%A9pares%20un%20voyage%20en%20Colombie%20%3F%20J%E2%80%99ai%20trouv%C3%A9%20ce%20service%20de%20Travel%20Planner%20Colombie%2C%20%C3%A7a%20peut%20t%E2%80%99int%C3%A9resser%20%3A%20https%3A%2F%2Fwww.maloka-experience.com%2F";
 ---
 
 <html lang="fr">
@@ -882,6 +884,23 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
               <p>On embarque pour l’aventure.</p>
               <a class="button cta-red large" href="#projet-voyage">Décrire mon projet de voyage</a>
             </div>
+          </div>
+        </section>
+
+        <section class="share-strip" aria-label="Partager Maloka Experience">
+          <div class="container share-strip-inner">
+            <div>
+              <p class="eyebrow">À partager</p>
+              <h2>Vous connaissez quelqu’un qui prépare un voyage en Colombie ?</h2>
+              <p>Envoyez-lui cette page, ça peut lui faire gagner pas mal d’heures de recherche.</p>
+            </div>
+            <a class="whatsapp-share" href={whatsappShareUrl} target="_blank" rel="noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 11.7a7.8 7.8 0 0 1-11.5 6.9L4 20l1.5-4.3A7.8 7.8 0 1 1 20 11.7Z"></path>
+                <path d="M9.5 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8s.1.3 0 .5c-.1.2-.2.3-.4.5l-.3.4c-.1.1-.2.3-.1.5.1.2.5.9 1.1 1.4.8.7 1.5 1 1.7 1.1.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.8c.2.1.4.2.4.3 0 .2-.1 1-.5 1.4-.4.5-1.2.8-1.7.8-.5 0-1.5-.1-2.7-.6a9 9 0 0 1-3.6-3.1c-1-1.3-1.2-2.4-1.2-2.9 0-.5.2-1.2.6-1.6Z"></path>
+              </svg>
+              Partager sur WhatsApp
+            </a>
           </div>
         </section>
       </main>
