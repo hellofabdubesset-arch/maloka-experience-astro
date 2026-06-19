@@ -2366,6 +2366,56 @@ blockquote {
   margin-top: 8px;
 }
 
+.article-table-wrap {
+  margin: 34px 0 38px;
+  overflow-x: auto;
+  border: 1px solid rgba(33, 45, 42, 0.16);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.article-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.article-table caption {
+  padding: 16px 18px;
+  background: #f3eadb;
+  color: var(--ink);
+  font-weight: 800;
+  text-align: left;
+}
+
+.article-table th,
+.article-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(33, 45, 42, 0.11);
+  text-align: left;
+}
+
+.article-table thead th {
+  background: #51604d;
+  color: #fff;
+  font-weight: 800;
+}
+
+.article-table tbody th {
+  font-weight: 800;
+}
+
+.article-table tbody tr:nth-child(even) {
+  background: #faf7f1;
+}
+
+.article-table tbody tr:last-child th,
+.article-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .article-photo,
 .article-photo-grid {
   margin: 34px 0 38px;

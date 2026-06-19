@@ -37,6 +37,11 @@ const pages = [
     path: "/premier-voyage-colombie-erreurs-a-eviter/",
     priority: "0.8",
     changefreq: "monthly"
+  },
+  {
+    path: "/quand-partir-en-colombie/",
+    priority: "0.8",
+    changefreq: "monthly"
   }
 ];
 
