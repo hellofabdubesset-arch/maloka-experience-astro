@@ -1,0 +1,52 @@
+<details class="article-toc" data-article-toc open>
+  <summary>Dans cet article</summary>
+  <ol data-toc-list></ol>
+</details>
+
+<script>
+  const createToc = (toc: Element) => {
+    const article = toc.closest(".article-content");
+    const list = toc.querySelector("[data-toc-list]");
+    if (!article || !list) return;
+
+    const headings = Array.from(article.querySelectorAll(":scope > h2"));
+    const usedIds = new Set<string>();
+
+    headings.forEach((heading, index) => {
+      const text = heading.textContent?.trim();
+      if (!text) return;
+
+      const generatedId =
+        heading.id ||
+        text
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "") ||
+        `section-${index + 1}`;
+      const baseId = /^\d/.test(generatedId) ? `section-${generatedId}` : generatedId;
+
+      let id = baseId;
+      let suffix = 2;
+      while (usedIds.has(id)) {
+        id = `${baseId}-${suffix}`;
+        suffix += 1;
+      }
+
+      usedIds.add(id);
+      heading.id = id;
+
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `#${id}`;
+      link.textContent = text;
+      item.append(link);
+      list.append(item);
+    });
+
+    if (!list.children.length) toc.remove();
+  };
+
+  document.querySelectorAll("[data-article-toc]").forEach(createToc);
+</script>

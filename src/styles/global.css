@@ -2366,6 +2366,52 @@ blockquote {
   margin-top: 8px;
 }
 
+.article-toc {
+  margin: 34px 0 52px;
+  padding: 22px 26px 24px;
+  border: 1px solid rgba(33, 45, 42, 0.16);
+  border-left: 5px solid var(--accent-red);
+  border-radius: 8px;
+  background: #faf7f1;
+}
+
+.article-toc summary {
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.article-toc ol {
+  margin: 20px 0 0;
+  padding-left: 24px;
+  columns: 2;
+  column-gap: 42px;
+}
+
+.article-toc li {
+  margin: 0 0 10px;
+  padding-left: 4px;
+  break-inside: avoid;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.article-toc li + li {
+  margin-top: 0;
+}
+
+.article-toc a {
+  color: #354139;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.article-toc a:hover {
+  color: var(--accent-red);
+  text-decoration: underline;
+}
+
 .article-table-wrap {
   margin: 34px 0 38px;
   overflow-x: auto;
@@ -2904,6 +2950,14 @@ blockquote {
 
   .article-photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .article-toc {
+    padding: 18px 20px 20px;
+  }
+
+  .article-toc ol {
+    columns: 1;
   }
 
   .affiliate-links {
