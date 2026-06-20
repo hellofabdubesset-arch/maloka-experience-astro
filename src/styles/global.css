@@ -2416,6 +2416,36 @@ blockquote {
   border-bottom: 0;
 }
 
+.climate-table {
+  min-width: 1080px;
+}
+
+.climate-table-wrap {
+  position: relative;
+  left: 50%;
+  width: min(1180px, calc(100vw - 48px));
+  max-width: none;
+  transform: translateX(-50%);
+}
+
+.article-photo.article-map {
+  padding: 24px;
+  background: #fff;
+}
+
+.article-photo.article-map img {
+  width: min(100%, 620px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.article-photo.article-map figcaption {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .article-photo,
 .article-photo-grid {
   margin: 34px 0 38px;
