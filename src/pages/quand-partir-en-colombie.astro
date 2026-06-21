@@ -4,6 +4,7 @@ import AffiliateLinks from "../components/AffiliateLinks.astro";
 import AuthorBox from "../components/AuthorBox.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import ArticleTableOfContents from "../components/ArticleTableOfContents.astro";
+import ArticleSeo from "../components/ArticleSeo.astro";
 
 const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
 ---
@@ -19,6 +20,14 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
     <title>Quand partir en Colombie ? Climat et meilleures périodes</title>
     <meta name="description" content="Quand partir en Colombie ? Climat, saisons sèches et pluies : découvrez les meilleures périodes selon les régions, vos activités et votre itinéraire." />
     <meta name="author" content="Fabrice Dubesset" />
+    <ArticleSeo
+      title="Quand partir en Colombie ? Climat, saisons et meilleures périodes"
+      description="Quand partir en Colombie ? Climat, saisons sèches et pluies : découvrez les meilleures périodes selon les régions, vos activités et votre itinéraire."
+      path="/quand-partir-en-colombie/"
+      image="/images/cocora.jpg"
+      datePublished="2026-06-19"
+      dateModified="2026-06-21"
+    />
     <GoogleAnalytics />
   </head>
   <body>
@@ -209,6 +218,19 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
                 </tbody>
               </table>
             </div>
+            <p class="article-source-note">
+              <strong>Sources climatiques :</strong> synthèse réalisée à partir de l’<a
+                href="https://www.ideam.gov.co/AtlasWeb/"
+                target="_blank"
+                rel="nofollow noreferrer"
+              >Atlas climatologique de l’IDEAM</a> et des <a
+                href="https://climateknowledgeportal.worldbank.org/country/colombia/climate-data-historical"
+                target="_blank"
+                rel="nofollow noreferrer"
+              >normales climatiques 1991-2020 de la Banque mondiale</a>. Ces données sont des
+              moyennes indicatives : la météo réelle varie selon l’altitude, le relief et les
+              phénomènes El Niño ou La Niña.
+            </p>
 
             <h3>Bogotá et les Andes</h3>
             <p>Bogotá se situe à environ 2 600 mètres d'altitude.</p>

@@ -2474,6 +2474,13 @@ blockquote {
   transform: translateX(-50%);
 }
 
+.article-source-note {
+  margin-top: 14px;
+  color: #5f665f;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
 .article-photo.article-map {
   padding: 24px;
   background: #fff;
