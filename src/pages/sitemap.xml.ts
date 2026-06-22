@@ -42,6 +42,11 @@ const pages = [
     path: "/quand-partir-en-colombie/",
     priority: "0.8",
     changefreq: "monthly"
+  },
+  {
+    path: "/romans-sur-la-colombie/",
+    priority: "0.7",
+    changefreq: "monthly"
   }
 ];
 
