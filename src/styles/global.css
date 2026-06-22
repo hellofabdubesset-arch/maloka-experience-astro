@@ -17,6 +17,48 @@
   background: var(--paper);
 }
 
+.book-cover {
+  float: left;
+  width: 150px;
+  margin: 0 24px 18px 0;
+}
+
+.book-cover a,
+.book-cover img {
+  display: block;
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  max-height: 230px;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(29, 33, 28, 0.16);
+}
+
+.book-cover figcaption {
+  margin-top: 8px;
+  color: #6b6f67;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.article-content h2 {
+  clear: both;
+}
+
+@media (max-width: 640px) {
+  .book-cover {
+    width: 108px;
+    margin-right: 16px;
+  }
+
+  .book-cover img {
+    max-height: 170px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
