@@ -962,75 +962,6 @@ img {
   box-shadow: 0 22px 66px rgba(25, 43, 34, 0.1);
 }
 
-.credibility-section {
-  padding-top: 0;
-}
-
-.credibility-strip {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(26px, 5vw, 56px);
-  align-items: start;
-  padding: clamp(28px, 5vw, 46px);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(238, 243, 241, 0.92)),
-    #fff;
-  box-shadow: 0 18px 54px rgba(25, 43, 34, 0.08);
-}
-
-.credibility-intro h2 {
-  margin: 6px 0 0;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1;
-  font-weight: 600;
-}
-
-.credibility-intro p:last-child {
-  margin: 18px 0 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.credibility-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.credibility-card {
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 12px;
-  align-items: start;
-  min-height: 100%;
-  padding: 18px 18px 17px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 12px 34px rgba(25, 43, 34, 0.08);
-}
-
-.credibility-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: rgba(31, 107, 70, 0.12);
-  color: var(--leaf-dark);
-  font-weight: 900;
-}
-
-.credibility-card p {
-  margin: 0;
-  color: var(--ink);
-  font-weight: 700;
-  line-height: 1.45;
-}
-
 .intro-panel h2,
 .fit-grid h2,
 .price-card h3,
@@ -3131,8 +3062,6 @@ blockquote {
   .photo-band-track,
   .photo-band-track.blog-track,
   .split,
-  .credibility-strip,
-  .credibility-grid,
   .about,
   .journey-visual,
   .intro-panel,
