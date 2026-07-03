@@ -39,8 +39,18 @@ const pages = [
     changefreq: "monthly"
   },
   {
+    path: "/voyager-colombie-sans-parler-espagnol/",
+    priority: "0.8",
+    changefreq: "monthly"
+  },
+  {
     path: "/quand-partir-en-colombie/",
     priority: "0.8",
+    changefreq: "monthly"
+  },
+  {
+    path: "/armero-colombie-ville-fantome/",
+    priority: "0.7",
     changefreq: "monthly"
   },
   {
