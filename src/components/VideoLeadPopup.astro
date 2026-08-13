@@ -1,0 +1,87 @@
+<div class="video-popup" data-video-popup hidden>
+  <div class="video-popup-backdrop" data-video-popup-close></div>
+  <section
+    class="video-popup-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="video-popup-title"
+  >
+    <button class="video-popup-close" type="button" data-video-popup-close aria-label="Fermer">
+      ×
+    </button>
+    <div class="video-popup-media">
+      <img
+        src="/images/video-paramo-murillo-teaser.jpg"
+        alt="Vidéo offerte sur un lieu méconnu en Colombie"
+        loading="lazy"
+      />
+    </div>
+    <div class="video-popup-content">
+      <p class="video-lead-kicker">Vidéo offerte</p>
+      <h2 id="video-popup-title">Recevez une vidéo d'un lieu méconnu en Colombie</h2>
+      <p>
+        Je vous envoie ma vidéo sur le páramo de Murillo, un paysage spectaculaire et encore peu
+        connu des voyageurs francophones.
+      </p>
+      <div class="video-lead-frame">
+        <iframe
+          width="540"
+          height="305"
+          src="https://c807be1e.sibforms.com/v2/serve/MUIFADr5KjW6C_l8W9AFC15Ys3kf6wHZQ716cK2W_rG0IleSliI2WZ9LfhFRJOQsqNFX_BEy9s_T8uWc9N6B_j74MM8ZQzRQ9veiA2zqsxRkuLEnGsYW7uoEIFFshwxwwJ_8mECITUY70QioFnLgod0djDsnNxXCnahTpZFAAHKuzY9rfvljXkFzMHvxeGFNWf-zAO_I2Z5NHkdH5A=="
+          title="Formulaire popup pour recevoir la vidéo sur le páramo de Murillo"
+          frameborder="0"
+          scrolling="auto"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  const popup = document.querySelector("[data-video-popup]");
+  const storageKey = "maloka-video-popup-dismissed-at";
+  const delay = 60000;
+  const cooldown = 7 * 24 * 60 * 60 * 1000;
+
+  const canShowPopup = () => {
+    if (!popup) return false;
+    let dismissedAt = 0;
+    try {
+      dismissedAt = Number(window.localStorage.getItem(storageKey) || 0);
+    } catch {
+      dismissedAt = 0;
+    }
+    return !dismissedAt || Date.now() - dismissedAt > cooldown;
+  };
+
+  const closePopup = () => {
+    if (!popup) return;
+    popup.setAttribute("hidden", "");
+    document.documentElement.classList.remove("popup-open");
+    try {
+      window.localStorage.setItem(storageKey, String(Date.now()));
+    } catch {
+      // Le formulaire reste utilisable même si le navigateur bloque le stockage local.
+    }
+  };
+
+  const openPopup = () => {
+    if (!popup || !canShowPopup()) return;
+    popup.removeAttribute("hidden");
+    document.documentElement.classList.add("popup-open");
+  };
+
+  window.setTimeout(openPopup, delay);
+
+  document.querySelectorAll("[data-video-popup-close]").forEach((button) => {
+    button.addEventListener("click", closePopup);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePopup();
+    }
+  });
+</script>

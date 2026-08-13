@@ -3010,6 +3010,90 @@ blockquote {
   background: #fff;
 }
 
+.popup-open {
+  overflow: hidden;
+}
+
+.video-popup[hidden] {
+  display: none;
+}
+
+.video-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.video-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 28, 24, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+.video-popup-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(190px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(18px, 3vw, 28px);
+  width: min(940px, 100%);
+  max-height: calc(100vh - 44px);
+  overflow: auto;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid rgba(36, 70, 56, 0.16);
+  border-radius: 8px;
+  background: #fffaf0;
+  box-shadow: 0 28px 80px rgba(24, 28, 24, 0.28);
+}
+
+.video-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(36, 70, 56, 0.14);
+  border-radius: 999px;
+  background: #fff;
+  color: #244638;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.video-popup-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.video-popup-content {
+  min-width: 0;
+  padding-right: 10px;
+}
+
+.video-popup-content h2 {
+  margin: 0 0 10px;
+  color: #244638;
+  font-size: clamp(1.55rem, 2.6vw, 2.1rem);
+  line-height: 1.12;
+}
+
+.video-popup-content p:not(.video-lead-kicker) {
+  margin: 0 0 16px;
+  color: #4f574d;
+}
+
 .article-cta {
   margin-top: 68px;
   padding: clamp(30px, 5vw, 46px);
@@ -3178,6 +3262,25 @@ blockquote {
 
   .video-lead-frame iframe {
     min-height: 330px;
+  }
+
+  .video-popup {
+    padding: 14px;
+  }
+
+  .video-popup-dialog {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .video-popup-media img {
+    min-height: 190px;
+    max-height: 230px;
+  }
+
+  .video-popup-content {
+    padding-right: 0;
   }
 
   .mobile-sticky-cta {
