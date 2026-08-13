@@ -2460,6 +2460,37 @@ blockquote {
   margin-top: 8px;
 }
 
+@media (min-width: 900px) {
+  .section-header p,
+  .split p,
+  .cta p {
+    font-size: 1.13rem;
+  }
+
+  .intro-copy p,
+  .content-grid p,
+  .reality-block p,
+  .roadbook-section p,
+  .price-card p,
+  .fit-grid p,
+  .trust-panel p {
+    font-size: 1.08rem;
+  }
+
+  .card p,
+  .check-list li,
+  .faq-answer,
+  .process-card p {
+    font-size: 1.04rem;
+  }
+
+  .article-content p,
+  .article-content li {
+    font-size: 1.12rem;
+    line-height: 1.86;
+  }
+}
+
 .article-toc {
   margin: 34px 0 52px;
   padding: 22px 26px 24px;
