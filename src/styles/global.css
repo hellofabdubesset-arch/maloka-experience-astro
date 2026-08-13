@@ -3042,8 +3042,8 @@ blockquote {
   display: block;
   width: 100%;
   max-width: 720px;
-  height: 680px;
-  min-height: 680px;
+  height: 860px;
+  min-height: 860px;
   margin: 0 auto;
   border: 0;
   border-radius: 8px;
@@ -3278,8 +3278,8 @@ blockquote {
   }
 
   .video-lead-frame iframe {
-    height: 640px;
-    min-height: 640px;
+    height: 820px;
+    min-height: 820px;
   }
 
   .video-popup {
