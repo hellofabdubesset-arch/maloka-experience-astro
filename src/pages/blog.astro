@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 
 const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
 
@@ -117,6 +118,10 @@ const articles = [
       <main>
         <section class="section legal-hero blog-hero">
           <div class="container legal-content">
+            <Breadcrumbs items={[
+              { label: "Accueil", href: "/" },
+              { label: "Blog" },
+            ]} />
             <p class="eyebrow">Blog</p>
             <h1>Conseils pour préparer votre voyage en Colombie</h1>
             <p class="legal-intro">

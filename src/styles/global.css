@@ -2329,6 +2329,47 @@ blockquote {
   line-height: 1.72;
 }
 
+.breadcrumbs {
+  margin: 0 0 22px;
+  color: rgba(36, 70, 56, 0.72);
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  color: rgba(36, 70, 56, 0.36);
+  content: "/";
+}
+
+.breadcrumbs a {
+  color: #244638;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: #ef3d32;
+}
+
+.breadcrumbs span {
+  color: rgba(36, 70, 56, 0.66);
+}
+
 .article-header .article-date {
   margin-top: 16px;
   color: rgba(36, 70, 56, 0.78);

@@ -7,6 +7,7 @@ import ArticleTableOfContents from "../components/ArticleTableOfContents.astro";
 import ArticleSeo from "../components/ArticleSeo.astro";
 import VideoLeadMagnet from "../components/VideoLeadMagnet.astro";
 import VideoLeadPopup from "../components/VideoLeadPopup.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 
 const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
 ---
@@ -59,6 +60,11 @@ const instagramUrl = "https://www.instagram.com/instinct_voyageur/";
         <article>
           <header class="article-hero">
             <div class="container article-header">
+              <Breadcrumbs items={[
+                { label: "Accueil", href: "/" },
+                { label: "Blog", href: "/blog/" },
+                { label: "Sécurité en Colombie" },
+              ]} />
               <p class="eyebrow">Préparer son voyage</p>
               <h1>Sécurité en Colombie : conseils pour voyager sans tomber dans la paranoïa</h1>
               <p class="article-date">
