@@ -15,6 +15,7 @@ est desactivee dans les scripts pour eviter une ecriture dans `~/Library/Prefere
 ## Structure
 
 - `src/pages/index.astro` : page principale
+- `src/pages/confirmation.astro` : confirmation d’inscription à la vidéo, à utiliser comme redirection Brevo après inscription confirmée ; page non indexable et absente du sitemap. L’envoi du lien vidéo est configuré dans Brevo.
 - `src/styles/global.css` : styles globaux
 - `public/images/colombia-hero.png` : visuel hero local
 
